@@ -8,11 +8,11 @@
 
         <variable
             name="story"
-            type="com.shaikjaleel.wsave.models.Story"/>
+            type="com.shaikjaleel.wsave.models.Story" />
 
         <variable
             name="callback"
-            type="com.shaikjaleel.wsave.callbacks.StoryCallback"/>
+            type="com.shaikjaleel.wsave.callbacks.StoryCallback" />
 
     </data>
 
@@ -24,9 +24,9 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:riv_corner_radius="2dp"
             android:scaleType="centerCrop"
-            app:imagePath="@{story.path}"/>
+            app:imagePath="@{story.path}"
+            app:riv_corner_radius="2dp" />
 
         <ImageButton
             android:id="@+id/videoIcon"
@@ -34,9 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/video_icon"
             android:onClick="@{(v) -> callback.onStoryClicked(v, story)}"
-            android:visibility="@{(story.type == 0) ? View.GONE : View.VISIBLE}"
-            android:contentDescription="@string/video_icon" />
+            android:visibility="@{(story.type == 0) ? View.GONE : View.VISIBLE}" />
 
     </com.shaikjaleel.wsave.utils.SquareLayout>
 
