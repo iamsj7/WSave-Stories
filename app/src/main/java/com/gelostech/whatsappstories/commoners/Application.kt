@@ -1,6 +1,6 @@
 package com.gelostech.whatsappstories.commoners
 
-import android.support.multidex.MultiDexApplication
+import androidx.multidex.MultiDexApplication
 import timber.log.Timber
 
 class Application : MultiDexApplication() {

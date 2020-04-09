@@ -1,7 +1,7 @@
 package com.gelostech.whatsappstories.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil.setContentView
 import cn.jzvd.JZVideoPlayer
 import cn.jzvd.JZVideoPlayerStandard
 import com.gelostech.whatsappstories.R

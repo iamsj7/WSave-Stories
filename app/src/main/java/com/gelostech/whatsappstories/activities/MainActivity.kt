@@ -2,7 +2,8 @@ package com.gelostech.whatsappstories.activities
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.TabLayout
+import android.provider.Settings.Global.getString
+import androidx.databinding.DataBindingUtil.setContentView
 import cn.jzvd.JZVideoPlayer
 import com.gelostech.whatsappstories.R
 import com.gelostech.whatsappstories.commoners.BaseActivity
@@ -10,6 +11,7 @@ import com.gelostech.whatsappstories.fragments.ImagesFragment
 import com.gelostech.whatsappstories.fragments.SavedFragment
 import com.gelostech.whatsappstories.fragments.VideosFragment
 import com.gelostech.whatsappstories.utils.PagerAdapter
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 

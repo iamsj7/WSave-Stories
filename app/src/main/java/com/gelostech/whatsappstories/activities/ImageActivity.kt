@@ -1,7 +1,7 @@
 package com.gelostech.whatsappstories.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.gelostech.whatsappstories.R
 import com.gelostech.whatsappstories.commoners.K
 import com.gelostech.whatsappstories.models.Story
