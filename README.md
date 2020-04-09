@@ -1,6 +1,6 @@
- # WhatsApp Stories
+ # WSave Stories
 
-App to view and manage WhatsApp stories
+View and Download WhatsApp stories
 
 ### Screenshots
 <img src="screenshots/one.png" width="200">    <img src="screenshots/two.png" width="200">
