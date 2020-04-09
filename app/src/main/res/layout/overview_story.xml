@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.gelostech.whatsappstories.utils.SquareLayout
+    <com.shaikjaleel.wsave.utils.SquareLayout
         android:id="@+id/media"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:visibility="gone"/>
 
-    </com.gelostech.whatsappstories.utils.SquareLayout>
+    </com.shaikjaleel.wsave.utils.SquareLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

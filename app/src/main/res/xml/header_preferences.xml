@@ -13,7 +13,7 @@
     <PreferenceCategory
         app:title="@string/about_title" >
         <Preference
-            app:fragment="com.gelostech.whatsappstories.activities.SettingsActivity$InfoFragment"
+            app:fragment="com.shaikjaleel.wsave.activities.SettingsActivity$InfoFragment"
             app:icon="@drawable/ic_info"
             app:key="info_header"
             app:title="@string/app_name"

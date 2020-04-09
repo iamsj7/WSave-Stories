@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gelostech.whatsappstories">
+    package="com.shaikjaleel.wsave">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".commoners.Application"
+        android:name="com.shaikjaleel.wsave.commoners.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,23 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name="com.shaikjaleel.wsave.activities.SettingsActivity"
             android:label="@string/settings"
-            android:parentActivityName=".activities.MainActivity">
+            android:parentActivityName="com.shaikjaleel.wsave.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gelostech.whatsappstories.activities.MainActivity" />
+                android:value="com.shaikjaleel.wsave.activities.MainActivity" />
         </activity>
-        <activity android:name=".activities.MainActivity">
+        <activity android:name="com.shaikjaleel.wsave.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".commoners.BaseActivity" />
-        <activity android:name=".activities.ImageActivity" />
-        <activity android:name=".activities.VideoActivity" />
+        <activity android:name="com.shaikjaleel.wsave.commoners.BaseActivity" />
+        <activity android:name="com.shaikjaleel.wsave.activities.ImageActivity" />
+        <activity android:name="com.shaikjaleel.wsave.activities.VideoActivity" />
     </application>
 
 </manifest>
