@@ -1,9 +1,10 @@
 package com.gelostech.whatsappstories.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.provider.Settings.Global.getString
-import androidx.databinding.DataBindingUtil.setContentView
+import android.view.Menu
+import android.view.MenuItem
 import cn.jzvd.JZVideoPlayer
 import com.gelostech.whatsappstories.R
 import com.gelostech.whatsappstories.commoners.BaseActivity
@@ -14,6 +15,7 @@ import com.gelostech.whatsappstories.utils.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
+
 
 class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
     private var doubleBackToExit = false
@@ -27,10 +29,27 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initViews()
-
         if (!storagePermissionGranted()) requestStoragePermission()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id = item.itemId
+        if (id == R.id.settings) {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun initViews() {

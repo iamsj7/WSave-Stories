@@ -44,5 +44,4 @@ open class BaseActivity : AppCompatActivity() {
     fun storagePermissionGranted(): Boolean {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     }
-
 }
