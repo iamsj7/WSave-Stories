@@ -7,31 +7,28 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.shaikjaleel.wsave.commoners.Application"
+        android:name=".commoners.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/MyMaterialTheme">
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.shaikjaleel.wsave.activities.SettingsActivity"
-            android:label="@string/settings"
-            android:parentActivityName="com.shaikjaleel.wsave.activities.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.shaikjaleel.wsave.activities.MainActivity" />
-        </activity>
-        <activity android:name="com.shaikjaleel.wsave.activities.MainActivity">
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.shaikjaleel.wsave.commoners.BaseActivity" />
-        <activity android:name="com.shaikjaleel.wsave.activities.ImageActivity" />
-        <activity android:name="com.shaikjaleel.wsave.activities.VideoActivity" />
+        <activity android:name=".activities.ImageActivity" />
+        <activity android:name=".activities.VideoActivity" />
     </application>
 
 </manifest>

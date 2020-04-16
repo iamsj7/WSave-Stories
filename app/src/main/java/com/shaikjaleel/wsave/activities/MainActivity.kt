@@ -1,23 +1,35 @@
 package com.shaikjaleel.wsave.activities
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import cn.jzvd.JZVideoPlayer
+import com.google.android.material.tabs.TabLayout
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import com.shaikjaleel.wsave.R
-import com.shaikjaleel.wsave.commoners.BaseActivity
+import com.shaikjaleel.wsave.SettingsActivity
 import com.shaikjaleel.wsave.fragments.ImagesFragment
 import com.shaikjaleel.wsave.fragments.SavedFragment
 import com.shaikjaleel.wsave.fragments.VideosFragment
+import com.shaikjaleel.wsave.models.PermissionsEvent
 import com.shaikjaleel.wsave.utils.PagerAdapter
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.toast
 
 
-class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
+class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private var doubleBackToExit = false
 
     companion object {
@@ -29,6 +41,7 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
         initViews()
         if (!storagePermissionGranted()) requestStoragePermission()
     }
@@ -53,9 +66,6 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
     }
 
     private fun initViews() {
-        setSupportActionBar(toolbar)
-        supportActionBar?.title = getString(R.string.app_name)
-
         setupViewPager()
         setupTabs()
     }
@@ -104,13 +114,37 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
 
             doubleBackToExit = true
 
-            Handler().postDelayed({doubleBackToExit = false }, 1500)
+            Handler().postDelayed({ doubleBackToExit = false }, 1500)
         }
     }
 
     override fun onPause() {
         super.onPause()
         JZVideoPlayer.releaseAllVideos()
+    }
+
+    // User hasn't requested storage permission; request them to allow
+    fun requestStoragePermission() {
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .withListener(object : PermissionListener {
+                    override fun onPermissionGranted(response: PermissionGrantedResponse) {
+                        EventBus.getDefault().post(PermissionsEvent(true))
+                    }
+
+                    override fun onPermissionDenied(response: PermissionDeniedResponse) {
+                        toast("Storage permission is required!")
+                    }
+
+                    override fun onPermissionRationaleShouldBeShown(permission: PermissionRequest, token: PermissionToken) {
+                        token.continuePermissionRequest()
+                    }
+                }).check()
+    }
+
+    // Check if user has granted storage permission
+    fun storagePermissionGranted(): Boolean {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     }
 
 }

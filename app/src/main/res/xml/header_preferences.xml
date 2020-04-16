@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/info_title">
         <Preference
-            app:icon="@drawable/ic_person"
+            app:icon="@drawable/ic_heart"
             app:key="dev_header"
             app:summary="@string/sj_sum"
             app:title="@string/sj_header" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/about_title">
-        <Preference
-            app:fragment="com.shaikjaleel.wsave.activities.SettingsActivity$InfoFragment"
-            app:icon="@drawable/ic_info"
-            app:key="info_header"
-            app:summary="@string/sum_about_app"
-            app:title="@string/app_name" />
+    <Preference
+        app:fragment="com.shaikjaleel.wsave.SettingsActivity$InfoFragment"
+        app:icon="@drawable/ic_wsave"
+        app:key="messages_header"
+        app:title="@string/app_name"
+        app:summary="@string/sum_about_app"/>
+
     </PreferenceCategory>
+
 </PreferenceScreen>

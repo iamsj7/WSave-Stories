@@ -3,14 +3,14 @@
 
     <PreferenceCategory android:title="App Details">
         <Preference
-            android:icon="@drawable/ic_label"
+            android:icon="@drawable/ic_next"
             android:key="@string/about_app_version"
             android:persistent="false"
             android:summary="@string/about_app_version_sum"
             android:title="@string/about_app_version" />
 
         <Preference
-            android:icon="@drawable/ic_info"
+            android:icon="@drawable/ic_checkmark"
             android:key="app_info"
             android:persistent="false"
             android:summary="@string/app_info_sum"

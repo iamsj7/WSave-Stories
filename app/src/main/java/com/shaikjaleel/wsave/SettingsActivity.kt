@@ -1,13 +1,14 @@
-package com.shaikjaleel.wsave.activities
+package com.shaikjaleel.wsave
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.shaikjaleel.wsave.R
 
+private const val TITLE_TAG = "settingsActivityTitle"
 
-class SettingsActivity : AppCompatActivity(), PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+class SettingsActivity : AppCompatActivity(),
+        PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,33 +23,38 @@ class SettingsActivity : AppCompatActivity(), PreferenceFragmentCompat.OnPrefere
         }
         supportFragmentManager.addOnBackStackChangedListener {
             if (supportFragmentManager.backStackEntryCount == 0) {
-                setTitle(R.string.settings)
+                setTitle(R.string.title_activity_settings)
             }
         }
-        val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    public override fun onSaveInstanceState(outState: Bundle) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         // Save current activity title so we can set it again after a configuration change
         outState.putCharSequence(TITLE_TAG, title)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return if (supportFragmentManager.popBackStackImmediate()) {
-            true
-        } else super.onSupportNavigateUp()
+        if (supportFragmentManager.popBackStackImmediate()) {
+            return true
+        }
+        return super.onSupportNavigateUp()
     }
 
-    override fun onPreferenceStartFragment(caller: PreferenceFragmentCompat, pref: Preference): Boolean {
+    override fun onPreferenceStartFragment(
+            caller: PreferenceFragmentCompat,
+            pref: Preference
+    ): Boolean {
         // Instantiate the new Fragment
         val args = pref.extras
         val fragment = supportFragmentManager.fragmentFactory.instantiate(
                 classLoader,
-                pref.fragment)
-        fragment.arguments = args
-        fragment.setTargetFragment(caller, 0)
+                pref.fragment
+        ).apply {
+            arguments = args
+            setTargetFragment(caller, 0)
+        }
         // Replace the existing Fragment with the new Fragment
         supportFragmentManager.beginTransaction()
                 .replace(R.id.settings, fragment)
@@ -70,7 +76,4 @@ class SettingsActivity : AppCompatActivity(), PreferenceFragmentCompat.OnPrefere
         }
     }
 
-    companion object {
-        private const val TITLE_TAG = "settingsActivityTitle"
-    }
 }
