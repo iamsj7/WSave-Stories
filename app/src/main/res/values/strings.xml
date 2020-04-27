@@ -2,7 +2,6 @@
     <string name="app_name">WSave</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="video_icon">Video icon</string>
     <string name="empty">No stories added yet</string>
     <string name="empty_saved">No stories saved yet</string>
@@ -24,5 +23,9 @@
     <string name="app_info_drop_target_label">App Info</string>
     <string name="app_info_sum">Device Settings</string>
     <string name="info_title">App Developer</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="follow_system_theme">Follow System</string>
+    <string name="interface_title">Theme</string>
+    <string name="app_theme">App Theme</string>
 
 </resources>

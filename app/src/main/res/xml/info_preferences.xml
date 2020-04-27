@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="App Details" >
+    <PreferenceCategory android:title="App Details">
         <Preference
+            android:icon="@drawable/ic_next"
             android:key="@string/about_app_version"
-            android:icon="@drawable/ic_label"
             android:persistent="false"
             android:summary="@string/about_app_version_sum"
-            android:title="@string/about_app_version"/>
+            android:title="@string/about_app_version" />
 
         <Preference
+            android:icon="@drawable/ic_checkmark"
             android:key="app_info"
-            android:icon="@drawable/ic_info"
+            android:persistent="false"
             android:summary="@string/app_info_sum"
-            android:title="@string/app_info_drop_target_label"
-            android:persistent="false">
+            android:title="@string/app_info_drop_target_label">
             <intent
                 android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
-                android:data="package:com.gelostech.whatsappstories" />
+                android:data="package:com.shaikjaleel.wsave" />
         </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
