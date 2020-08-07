@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.shaikjaleel.wsave.fragments.ImagesFragment">
+    tools:context="com.nerdinfusions.wsave.fragments.ImagesFragment">
 
     <TextView
         android:id="@+id/empty"

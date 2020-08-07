@@ -11,7 +11,7 @@ apply plugin: 'kotlin-platform-android'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.shaikjaleel.wsave"
+        applicationId "com.nerdinfusions.wsave"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 2

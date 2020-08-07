@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="com.shaikjaleel.wsave.activities.VideoActivity">
+    tools:context="com.nerdinfusions.wsave.activities.VideoActivity">
 
     <cn.jzvd.JZVideoPlayerStandard
         android:id="@+id/video"

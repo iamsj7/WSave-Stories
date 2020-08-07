@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.shaikjaleel.wsave.utils.SquareLayout
+    <com.nerdinfusions.wsave.utils.SquareLayout
         android:id="@+id/media"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:visibility="gone" />
 
-    </com.shaikjaleel.wsave.utils.SquareLayout>
+    </com.nerdinfusions.wsave.utils.SquareLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

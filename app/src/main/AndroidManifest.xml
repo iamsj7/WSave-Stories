@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shaikjaleel.wsave">
+    package="com.nerdinfusions.wsave">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".commoners.Application"
+        android:name="com.nerdinfusions.wsave.commoners.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,11 +16,11 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.nerdinfusions.wsave.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:parentActivityName="com.nerdinfusions.wsave.activities.MainActivity"/>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.nerdinfusions.wsave.activities.MainActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,8 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ImageActivity" />
-        <activity android:name=".activities.VideoActivity" />
+        <activity android:name="com.nerdinfusions.wsave.activities.ImageActivity" />
+        <activity android:name="com.nerdinfusions.wsave.activities.VideoActivity" />
     </application>
 
 </manifest>
