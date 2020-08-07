@@ -27,6 +27,12 @@ android {
         }
     }
 
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${defaultConfig.applicationId}-V-${defaultConfig.versionName}-${variant.buildType.name}.apk"
+        }
+    }
+
     dataBinding {
         enabled = true
     }
