@@ -19,7 +19,7 @@
     <string name="about_title">About</string>
     <string name="sum_about_app">About this app, version etc.</string>
     <string name="about_app_version">Version</string>
-    <string name="about_app_version_sum">Stable 1.0</string>
+    <string name="about_app_version_sum">Stable 2.0</string>
     <string name="app_info_drop_target_label">App Info</string>
     <string name="app_info_sum">Device Settings</string>
     <string name="info_title">App Developer</string>
