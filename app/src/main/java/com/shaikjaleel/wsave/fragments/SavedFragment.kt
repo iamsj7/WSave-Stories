@@ -84,7 +84,7 @@ class SavedFragment : BaseFragment(), StoryCallback {
 
             uiThread {
 
-                if (files.isNotEmpty()) {
+                if (files?.isNotEmpty() == true) {
                     hasStories()
 
                     for (file in files.sortedBy { it.lastModified() }.reversed()) {
