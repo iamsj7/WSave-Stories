@@ -3,21 +3,23 @@
 
     <PreferenceCategory android:title="App Details">
         <Preference
-            android:icon="@drawable/ic_next"
-            android:key="@string/about_app_version"
+            android:icon="@drawable/ic_privacy"
+            android:key="priv_info"
             android:persistent="false"
-            android:summary="@string/about_app_version_sum"
-            android:title="@string/about_app_version" />
-
-        <Preference
-            android:icon="@drawable/ic_checkmark"
-            android:key="app_info"
-            android:persistent="false"
-            android:summary="@string/app_info_sum"
-            android:title="@string/app_info_drop_target_label">
+            android:title="@string/priv_info">
             <intent
-                android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
-                android:data="package:com.nerdinfusions.wsave" />
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/iamsj7/WSave-Stories/blob/master/privacy.md" />
         </Preference>
+        <Preference
+            android:icon="@drawable/ic_terms"
+            android:key="priv_info"
+            android:persistent="false"
+            android:title="@string/term_info">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/iamsj7/WSave-Stories/blob/master/terms_conditions.md" />
+        </Preference>
+
     </PreferenceCategory>
 </PreferenceScreen>
