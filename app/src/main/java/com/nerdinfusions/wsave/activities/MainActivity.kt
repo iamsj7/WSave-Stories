@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import cn.jzvd.JZVideoPlayer
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -31,6 +32,7 @@ import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private var doubleBackToExit = false
+	private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     companion object {
         private const val IMAGES = "IMAGES"
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+		// Obtain the FirebaseAnalytics instance.
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         initViews()
