@@ -98,6 +98,33 @@ class VideosFragment : BaseFragment(), StoryCallback {
 
         }
 
+        val gbdir = File(K.GBWHATSAPP_STORIES)
+        if (!gbdir.exists())
+            gbdir.mkdirs()
+
+        doAsync {
+            val files = gbdir.listFiles { _, s ->
+                s.endsWith(".mp4") || s.endsWith(".gif") }
+
+            uiThread {
+
+                if (files?.isNotEmpty() == true) {
+                    hasStories()
+
+                    for (file in files.sortedBy { it.lastModified() }.reversed()) {
+                        val story = Story(K.TYPE_VIDEO, file.absolutePath)
+                        adapter.addStory(story)
+                    }
+
+                } else {
+                    noStories()
+                }
+
+                stopRefreshing()
+            }
+
+        }
+
     }
 
     private fun noStories() {

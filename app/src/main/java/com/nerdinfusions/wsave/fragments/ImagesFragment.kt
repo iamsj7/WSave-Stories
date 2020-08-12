@@ -97,6 +97,31 @@ class ImagesFragment : BaseFragment(), StoryCallback {
 
         }
 
+        val gbdir = File(K.GBWHATSAPP_STORIES)
+        if (!gbdir.exists())
+            dir.mkdirs()
+
+        doAsync {
+            val files = gbdir.listFiles { _, s ->
+                s.endsWith(".png") || s.endsWith(".jpg") || s.endsWith(".jpeg") }
+
+            uiThread {
+
+                if (files?.isNotEmpty() == true) {
+                    hasStories()
+                    for (file in files.sortedBy { it.lastModified() }.reversed()) {
+                        val story = Story(K.TYPE_IMAGE, file.absolutePath)
+                        adapter.addStory(story)
+                    }
+                } else {
+                    noStories()
+                }
+
+                stopRefreshing()
+            }
+
+        }
+
     }
 
     private fun noStories() {
