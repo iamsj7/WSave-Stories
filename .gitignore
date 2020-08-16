@@ -3,8 +3,8 @@
 
 ### Android ###
 # Built application files
-*.apk
-*.ap_
+#*.apk
+#*.ap_
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -20,7 +20,7 @@ out/
 # Gradle files
 .gradle/
 build/
-release/
+#release/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -50,7 +50,7 @@ captures/
 .idea/libraries
 
 # Google Services (e.g. APIs or Firebase)
-#app/google-services.json
+app/google-services.json
 
 # Keystore files
 *.jks
