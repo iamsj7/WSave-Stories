@@ -8,15 +8,15 @@
 
         <variable
             name="story"
-            type="com.nerdinfusions.wsave.models.Story" />
+            type="com.nerdinfusions.statusx.models.Story" />
 
         <variable
             name="callback"
-            type="com.nerdinfusions.wsave.callbacks.StoryCallback" />
+            type="com.nerdinfusions.statusx.callbacks.StoryCallback" />
 
     </data>
 
-    <com.nerdinfusions.wsave.utils.SquareLayout
+    <com.nerdinfusions.statusx.utils.SquareLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{(v) -> callback.onStoryClicked(v, story)}">
@@ -38,7 +38,7 @@
             android:onClick="@{(v) -> callback.onStoryClicked(v, story)}"
             android:visibility="@{(story.type == 0) ? View.GONE : View.VISIBLE}" />
 
-    </com.nerdinfusions.wsave.utils.SquareLayout>
+    </com.nerdinfusions.statusx.utils.SquareLayout>
 
 </layout>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nerdinfusions.wsave">
+    package="com.nerdinfusions.statusx">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.nerdinfusions.wsave.commoners.Application"
+        android:name="com.nerdinfusions.statusx.commoners.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +16,7 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme">
         <!-- The below is for the splash screen and we need no action bar and the default theme -->
-        <activity android:name="com.nerdinfusions.wsave.activities.SplashActivity"
+        <activity android:name="com.nerdinfusions.statusx.activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nerdinfusions.wsave.SettingsActivity"
+            android:name="com.nerdinfusions.statusx.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.nerdinfusions.wsave.activities.MainActivity"/>
+            android:parentActivityName="com.nerdinfusions.statusx.activities.MainActivity"/>
         <activity
-            android:name="com.nerdinfusions.wsave.activities.MainActivity"
+            android:name="com.nerdinfusions.statusx.activities.MainActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,8 +36,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.nerdinfusions.wsave.activities.ImageActivity" />
-        <activity android:name="com.nerdinfusions.wsave.activities.VideoActivity" />
+        <activity android:name="com.nerdinfusions.statusx.activities.ImageActivity" />
+        <activity android:name="com.nerdinfusions.statusx.activities.VideoActivity" />
     </application>
-
 </manifest>
