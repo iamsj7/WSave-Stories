@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.nerdinfusions.wsave",
+  "applicationId": "com.nerdinfusions.statusx",
   "variantName": "release",
   "elements": [
     {
@@ -14,7 +14,7 @@
       "versionCode": 21,
       "versionName": "2.1",
       "enabled": true,
-      "outputFile": "com.nerdinfusions.wsave-V-2.1-release.apk"
+      "outputFile": "com.nerdinfusions.statusx-V-2.1-release.apk"
     }
   ]
 }
